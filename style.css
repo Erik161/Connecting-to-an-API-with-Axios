@@ -1,88 +1,69 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-
 
 body {
-    font-family: 'Monserrat', sans-serif;
-    background: #e0e0e0;
-    color: #1d1d1d;
+	font-family: 'Montserrat', sans-serif;
+	background: #e0e0e0;
+	color: #1d1d1d;
 }
 
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	margin: 40px auto 100px auto;
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto 100px auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
 }
 
-
-.container .pelicula {
-    text-align: center;
-    transition: transform 0.3s; 
+.contenedor .pelicula {
+	text-align: center;
 }
 
-.container .pelicula .titulo {
-    font-size: 16px;
-    font-weight: 600;
-} 
-
-
-.container .pelicula .poster {
-    width: 100%;
-    margin-bottom: 10px;
-    border-radius: 15px;
+.contenedor .pelicula .titulo {
+	font-size: 16px;
+	font-weight: 600;
 }
 
-
-.container .pelicula .poster:hover {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+.contenedor .pelicula .poster {
+	width: 100%;
+	min-height: 200px;
+	margin-bottom: 10px;
+	border-radius: 15px;
 }
-
-
-.container .pelicula:hover{
-    transform: translateY(-20px);
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
 
 .paginacion {
-    position: fixed;
-    bottom: 0;
-    background: #100a1f;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px;
+	position: fixed;
+	bottom: 0;
+	background: #100a1f;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 10px;
 }
 
 .paginacion button {
-    cursor: pointer;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 50px;
-    width: 200px;
-    background: #241744;
-    color: #ffff;
-    border-radius: 100px;
-    font-family: 'Monserrat', sans-serif;
-    font-weight: 600;
-    transition: .3s ease all;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 50px;
+	width: 200px;
+	background: #241744;
+	color: #fff;
+	border-radius: 100px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	transition: .3s ease all;
 }
 
-
-.paginacion button:hover{
-    background: #137c32;
+.paginacion button:hover {
+	background: #137c32;
 }
