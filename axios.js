@@ -18,17 +18,25 @@ let observador = new IntersectionObserver((entradas, observador) => {
 });
 
 
-const cargarPeliculas = async() => {
-	try {
-		const respuesta = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es-MX&page=${pagina}`);
-	
-		// console.log(respuesta);
 
-		// Si la respuesta es correcta
+const  cargarPeliculas = async()=>{
+    try {
+        const respuesta = await axios.get('https://api.themoviedb.org/3/movie/popular', {
+            params:{
+                // api_key:'192e0b9821564f26f52949758ea3c473',
+                language:'es-MX',
+                page: pagina
+            },
+            headers: {
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZTcxMmQ5MDU1NDZkNjkwOGM3OWZhYjI4ZDhmNDE4MCIsInN1YiI6IjY0MWU3MmFlYjIzNGI5MDBkYjcxNjlkZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BE778fVO-8OMQYLdHe1UClGIwH2RzDZV5vfpCLwp0QU'
+            }
+        })
+
+        // Si la respuesta es correcta
 		if(respuesta.status === 200){
-			const datos = await respuesta.json();
 			
-			datos.results.forEach(pelicula => {
+			
+			respuesta.data.results.forEach(pelicula => {
 				peliculas += `
 					<div class="pelicula">
 						<img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}">
@@ -57,10 +65,9 @@ const cargarPeliculas = async() => {
 			console.log('Hubo un error y no sabemos que paso');
 		}
 
-	} catch(error){
-		console.log(error);
-	}
-
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 cargarPeliculas();
